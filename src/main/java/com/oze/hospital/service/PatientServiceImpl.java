@@ -55,15 +55,8 @@ public class PatientServiceImpl {
 	}
 
 	public List<Patient> findByAgeTwoOnly(String staffId){
-		try {
-			validStaff(staffId);
-			return patientDao.findByAge(2);
-		}catch(Exception exp) {
-			exp.printStackTrace();
-		}
-		
-		return Arrays.asList(new Patient());
-	
+		validStaff(staffId);
+		return patientDao.findByAge(2);	
 	}
 
 	public String deleteByDateRange(String staffId,Date startDate, Date endDate){
